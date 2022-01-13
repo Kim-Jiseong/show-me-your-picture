@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # my app
     'server',
     'accounts',
+    'pictures',
     'storages', #S3
     'corsheaders', #CORS
     #DRF
@@ -170,24 +171,18 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # # S3 Storage
-# if DEBUG:
-#     STATIC_URL = '/static/'
-#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#     MEDIA_URL = '/media/'
-#     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # else:
 #     AWS_ACCESS_KEY_ID = env('MY_AWS_ACCESS_KEY_ID')
 #     AWS_SECRET_ACCESS_KEY = env('MY_AWS_SECRET_ACCESS_KEY')
